@@ -96,10 +96,14 @@ void UBullCowCartridge::ProcessGuess(const FString& Guess)
     --Lives;
 
     //Output User Guess
+    PrintLine(TEXT("Here is your guess: \n"));
     for (int index = 0; index <HiddenWord.Len(); index++)
     {
         if (char(HiddenWord[index]) == char(Guess[index]))
-            PrintLine(TEXT("Here is your guess: \n"), char(Guess[index])); 
+          {
+            char temp = char(Guess[index]);
+            PrintLine(TEXT("%c"), temp); 
+          }
         else 
             PrintLine(TEXT("_"));
     }
