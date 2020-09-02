@@ -21,7 +21,8 @@ class BULLCOWGAME_API UBullCowCartridge : public UCartridge
 	virtual void BeginPlay() override;
 	virtual void OnInput(const FString& PlayerInput) override;
 	void SetupGame();
-	void EndGame();
+	void EndGame(); 
+	void NextWord();
 	void ProcessGuess(const FString& Guess);
 	bool IsIsogram(const FString& Word) const;
 	TArray<FString> GetValidWords(const TArray<FString>& WordList) const;
@@ -32,5 +33,8 @@ class BULLCOWGAME_API UBullCowCartridge : public UCartridge
 	FString HiddenWord;
 	int32 Lives;
 	bool bGameOver;
+	bool bNextWord;
 	TArray<FString> Isograms;
+	int32 ScoreCount;
+	int32 Score;
 };
