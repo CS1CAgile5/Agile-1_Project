@@ -100,7 +100,7 @@ void UBullCowCartridge::ProcessGuess(const FString& Guess)
     char GuessArray[16]; //longest isogram in English = 16 letters
     FString correct = "";
 
-    PrintLine(TEXT("Here is your guess:"));
+    PrintLine(TEXT("\nHere is your guess:"));
     for (int index = 0; index <HiddenWord.Len(); index++)
     {
         if (char(HiddenWord[index]) == char(Guess[index]))
