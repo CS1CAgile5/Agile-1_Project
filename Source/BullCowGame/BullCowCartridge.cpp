@@ -98,7 +98,6 @@ void UBullCowCartridge::ProcessGuess(const FString& Guess)
     //Output User Guess
     for (int index = 0; index <HiddenWord.Len(); index++)
     {
- 
         if (char(HiddenWord[index]) == char(Guess[index]))
             PrintLine(TEXT("Here is your guess: \n"), char(Guess[index])); 
         else 
