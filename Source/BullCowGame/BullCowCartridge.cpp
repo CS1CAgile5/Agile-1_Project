@@ -96,18 +96,27 @@ void UBullCowCartridge::ProcessGuess(const FString& Guess)
     --Lives;
 
     //Output User Guess
+
+    char GuessArray[16]; //longest isogram in English = 16 letters
+    FString correct = "";
+
     PrintLine(TEXT("Here is your guess: \n"));
     for (int index = 0; index <HiddenWord.Len(); index++)
     {
         if (char(HiddenWord[index]) == char(Guess[index]))
           {
-            char temp = char(Guess[index]);
-            PrintLine(TEXT("%c"), temp); 
+            GuessArray[index] = char(Guess[index]);
           }
         else 
-            PrintLine(TEXT("_"));
+            GuessArray[index] = '_';
     }
 
+    //output in one line
+    for (int i = 0; i < HiddenWord.Len(); i++)
+    {
+        correct = correct + GuessArray[i];
+    }
+    PrintLine(TEXT("%s"), correct); 
 
     if (Lives <= 0)
     {
