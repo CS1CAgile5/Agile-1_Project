@@ -8,8 +8,8 @@
 
 struct FBullCowCount
 {
-	int32 Bulls = 0;
-	int32 Cows  = 0;
+	int32 Foxes = 0;
+	int32 Wolves  = 0;
 };
 
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))

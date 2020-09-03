@@ -7,7 +7,7 @@ void UBullCowCartridge::BeginPlay() // When the game starts
     Super::BeginPlay();
 
     //Welcoming the Player
-    PrintLine(TEXT("Welcome to the ??? ??? Game!"));
+    PrintLine(TEXT("Welcome to the Fox Wolf Game!"));
     Isograms = GetValidWords(Words);
 
     //GetValidWords(Words);
@@ -130,7 +130,7 @@ void UBullCowCartridge::ProcessGuess(const FString& Guess)
     //Show the player Bulls and Cows
     FBullCowCount Score = GetBullCows(Guess);
 
-    PrintLine(TEXT("You have %i Bulls and %i Cows"), Score.Bulls, Score.Cows);
+    PrintLine(TEXT("You have %i Foxes and %i Wolves"), Score.Foxes, Score.Wolves);
 
     PrintLine(TEXT("Guess Again, you have %i lives left"), Lives);
 }
@@ -173,7 +173,7 @@ FBullCowCount UBullCowCartridge::GetBullCows(const FString& Guess) const
     {
         if (Guess[GuessIndex] == HiddenWord[GuessIndex])
         {
-            Count.Bulls++;
+            Count.Foxes++;
             continue;
         }
 
@@ -181,7 +181,7 @@ FBullCowCount UBullCowCartridge::GetBullCows(const FString& Guess) const
         {
             if (Guess[GuessIndex] == HiddenWord[HiddenIndex])
             {
-                Count.Cows++;
+                Count.Wolves++;
                 break;
             }
         }
